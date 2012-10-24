@@ -24,7 +24,6 @@
 <script src="<?php bloginfo('template_directory') ?>/assets/js/easing.js"></script>
 <script src="<?php bloginfo('template_directory') ?>/assets/js/cycle.js"></script>
 <script src="<?php bloginfo('template_directory') ?>/assets/js/slimbox.js"></script>
-<script src="<?php bloginfo('template_directory') ?>/assets/js/twitter.js"></script>
 <script src="<?php bloginfo('template_directory') ?>/assets/js/jquery.lifestream.js"></script>
 <script src="<?php bloginfo('template_directory') ?>/assets/js/scripts.js"></script>
 
