@@ -1,5 +1,6 @@
 .htaccess
 xmlrpc.php
+wp-config.php
 wp-content/blogs.dir/
 wp-content/upgrade/*
 wp-content/backup-db/*
