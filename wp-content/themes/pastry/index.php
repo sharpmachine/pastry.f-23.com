@@ -21,48 +21,39 @@ get_header(); ?>
 				<span class="next"><a href="javascript:void(0)">Next</a></span>
 			</div>	
 			<div class="grams">
-			<ul class="cycle nostyle">
 
 			<?php
-				$rss = new DOMDocument();
-				$rss->load('http://followgram.me/lovepastry/rss');
-				$feed = array();
+			 	$rss = new DOMDocument();
+			 	$rss->load('http://followgram.me/lovepastry/rss');
+			 	$feed = array();
 				
 				foreach ($rss->getElementsByTagName('item') as $node) {
-					$item = array ( 
-						'desc' => $node->getElementsByTagName('description')->item(0)->nodeValue,
-						);
-					array_push($feed, $item);
+					array_push($feed, $node->getElementsByTagName('description')->item(0)->nodeValue);
 				}
-				$limit = 6;
-				for($x=0;$x<$limit;$x++) {
-				$description = $feed[$x]['desc'];
+
+				$i = 0;
+				$display_count = 18;
+
 				$imgpattern = '/src="(.*?)"/i';
-				preg_match($imgpattern, $description, $matches);
-				$final['desc']= $matches[1];
+				for($x = 0; $x < $display_count; $x++) {
+					//foreach ($feed as $link_code) {
+					if( $i == 0 ) {
+						echo '<ul class="cycle nostyle">';
+					}
+					$link_code = $feed[$x];
+					preg_match($imgpattern, $link_code, $links);
+					echo '<li><a href="'.$links[1].'" rel="lightbox"><img src="'.$links[1].'"/></a></li>';					
+					if( $i == 5 ) {
+						echo '</ul>';
+						$i = 0;
 
-				echo '<li><a href="'.$final['desc'].'" rel="lightbox"><img src="'.$final['desc'].'"/></a></li>';
+					}
+					else {
+						$i++;
+					}
 
-			}	
+				}	
 			?>
-			</ul>
-
-	<!-- <ul class="cycle nostyle">
-					<li><a href="<?php echo get_template_directory_uri(); ?>/freshly-slide.jpg" rel="lightbox"><img src="<?php echo get_template_directory_uri(); ?>/instadummy.jpg" alt=""></a></li>
-					<li><a href="<?php echo get_template_directory_uri(); ?>/freshly-slide.jpg" rel="lightbox"><img src="<?php echo get_template_directory_uri(); ?>/instadummy.jpg" alt=""></a></li>
-					<li><a href="<?php echo get_template_directory_uri(); ?>/freshly-slide.jpg" rel="lightbox"><img src="<?php echo get_template_directory_uri(); ?>/instadummy.jpg" alt=""></a></li>
-					<li><a href="<?php echo get_template_directory_uri(); ?>/freshly-slide.jpg" rel="lightbox"><img src="<?php echo get_template_directory_uri(); ?>/instadummy.jpg" alt=""></a></li>
-					<li><a href="<?php echo get_template_directory_uri(); ?>/freshly-slide.jpg" rel="lightbox"><img src="<?php echo get_template_directory_uri(); ?>/instadummy.jpg" alt=""></a></li>
-					<li><a href="<?php echo get_template_directory_uri(); ?>/freshly-slide.jpg" rel="lightbox"><img src="<?php echo get_template_directory_uri(); ?>/instadummy.jpg" alt=""></a></li>
-				</ul>
-				<ul class="cycle nostyle">
-					<li><a href="<?php echo get_template_directory_uri(); ?>/freshly-slide.jpg" rel="lightbox"><img src="<?php echo get_template_directory_uri(); ?>/instadummy.jpg" alt=""></a></li>
-					<li><a href="<?php echo get_template_directory_uri(); ?>/freshly-slide.jpg" rel="lightbox"><img src="<?php echo get_template_directory_uri(); ?>/instadummy.jpg" alt=""></a></li>
-					<li><a href="<?php echo get_template_directory_uri(); ?>/freshly-slide.jpg" rel="lightbox"><img src="<?php echo get_template_directory_uri(); ?>/instadummy.jpg" alt=""></a></li>
-					<li><a href="<?php echo get_template_directory_uri(); ?>/freshly-slide.jpg" rel="lightbox"><img src="<?php echo get_template_directory_uri(); ?>/instadummy.jpg" alt=""></a></li>
-					<li><a href="<?php echo get_template_directory_uri(); ?>/freshly-slide.jpg" rel="lightbox"><img src="<?php echo get_template_directory_uri(); ?>/instadummy.jpg" alt=""></a></li>
-					<li><a href="<?php echo get_template_directory_uri(); ?>/freshly-slide.jpg" rel="lightbox"><img src="<?php echo get_template_directory_uri(); ?>/instadummy.jpg" alt=""></a></li>
-				</ul> -->
 			</div>
 		</section><!-- #instagram-carousel -->
 		
