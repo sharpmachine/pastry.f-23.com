@@ -1,4 +1,4 @@
-
+</div><!-- #wrap -->
 	<footer>
 		<div id="recently-viewed" class="widget"></div>
 		
@@ -21,7 +21,7 @@
 		<div class="clear"></div>
 		<nav>
 			<ul>
-				<li><a href="">About</a></li>
+				<li><a href="<?php bloginfo('url'); ?>/about">About</a></li>
 				<li><a href="">FAQ</a></li>
 				<li><a href="">Contact Us</a></li>
 				<li><a href="">Wholesale</a></li>
@@ -31,7 +31,7 @@
 				<li><a href="">International Shipping</a></li>
 			</ul>
 		</nav>
-		<p class="note">&copy; Copyright 2012 LovePastry. All Right Resereved.</p>
+		<p class="note">&copy; 2012 LovePastry. All Rights Reserved.</p>
 	</footer>
 	
 <?php wp_footer(); ?>
