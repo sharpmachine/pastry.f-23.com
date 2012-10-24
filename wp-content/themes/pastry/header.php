@@ -21,10 +21,13 @@
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script src="http://code.jquery.com/ui/1.9.0/jquery-ui.js"></script>
 
-<script src="<?php echo get_template_directory_uri(); ?>/assets/js/easing.js"></script>
-<script src="<?php echo get_template_directory_uri(); ?>/assets/js/cycle.js"></script>
-<script src="<?php echo get_template_directory_uri(); ?>/assets/js/slimbox.js"></script>
-<script src="<?php echo get_template_directory_uri(); ?>/assets/js/twitter.js"></script>
+<script src="<?php bloginfo('template_directory') ?>/assets/js/easing.js"></script>
+<script src="<?php bloginfo('template_directory') ?>/assets/js/cycle.js"></script>
+<script src="<?php bloginfo('template_directory') ?>/assets/js/slimbox.js"></script>
+<script src="<?php bloginfo('template_directory') ?>/assets/js/twitter.js"></script>
+<script src="<?php bloginfo('template_directory') ?>/assets/js/jquery.lifestream.js"></script>
+<script src="<?php bloginfo('template_directory') ?>/assets/js/scripts.js"></script>
+
 
 <?php  while(the_repeater_field('sliders_options', 'options')) { ?>
 <script>

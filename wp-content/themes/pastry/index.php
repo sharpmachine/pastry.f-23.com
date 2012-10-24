@@ -218,7 +218,7 @@ get_header(); ?>
 				</div>
 			</div><!-- #freshly-team -->
 		</section>
-		
+
 		<section class="block">
 			<div id="were-social" class="main">
 			<h2 class="sec-title">We're Social</h2>			
@@ -228,58 +228,10 @@ get_header(); ?>
 						<li class="mid"><a href="#facebook">Facebook</a></li>
 						<li><a href="#twitter">Twitter</a></li>
 					</ul>
-					<div id="all" class="tab">
-						<div class="cols">
-							<div class="col first">
-								<p>Congratulations to Pastry Girl, Mz Bratt for making Billboard's latest 'Top 7 British Female Rappers Making Noise' list. Nunc blandit nibh a nunc volutpat suscipit</p>
-								<div class="date-social facebook">
-									<span class="ago-social">18 hours ago on</span>
-									<span class="on-social"><a href="">Facebook</a></span>
-								</div>
-							</div>
-							<div class="col mid">
-								<p>"Life is short, live it. Love is rare, grab it. Anger is bad, dump it. Fear is awful, face it. Memories are sweet, cherish them." Vestibulum condimentum placerat augue, sit amet facilisis risus luctus ac</p>
-								<div class="date-social facebook">
-									<span class="ago-social">18 hours ago on</span>
-									<span class="on-social"><a href="">Facebook</a></span>
-								</div>
-							</div>
-
-<div class="tweetall"></div>
-						
-						</div>
-					</div><!-- #all -->
-					<div id="facebook" class="tab">
-						<div class="cols">
-							<div class="col first">
-								<p>Congratulations to Pastry Girl, Mz Bratt for making Billboard's latest 'Top 7 British Female Rappers Making Noise' list. Nunc blandit nibh a nunc volutpat suscipit</p>
-								<div class="date-social facebook">
-									<span class="ago-social">18 hours ago on</span>
-									<span class="on-social"><a href="">Facebook</a></span>
-								</div>
-							</div>
-							<div class="col mid">
-								<p>"Life is short, live it. Love is rare, grab it. Anger is bad, dump it. Fear is awful, face it. Memories are sweet, cherish them." Vestibulum condimentum placerat augue, sit amet facilisis risus luctus ac</p>
-								<div class="date-social facebook">
-									<span class="ago-social">18 hours ago on</span>
-									<span class="on-social"><a href="">Facebook</a></span>
-								</div>
-							</div>
-							<div class="col last">
-								<p>"Life is short, live it. Love is rare, grab it. Anger is bad, dump it. Fear is awful, face it. Memories are sweet, cherish them." Vestibulum condimentum placerat augue, sit amet facilisis risus luctus ac</p>
-								<div class="date-social facebook">
-									<span class="ago-social">18 hours ago on</span>
-									<span class="on-social"><a href="">Facebook</a></span>
-								</div>
-							</div>						
-						</div>
-					</div><!-- #facebook -->
-					<div id="twitter" class="tab">
-
-					<div class="tweet"></div>
-					
-					</div>
-				</div><!-- #twitter -->
+					<div id="all" class="tab"></div>
+					<div id="facebook" class="tab"></div>
+					<div id="twitter" class="tab"></div>
+				</div>
 			</div>
 			
 			<div id="fresh-out" class="aside">
