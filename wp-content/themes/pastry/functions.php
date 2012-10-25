@@ -37,7 +37,7 @@ if ( function_exists('register_sidebar') )
 		'after_title' => '</h2>'
 	));
 
-	add_action( 'widgets_init', 'pastry_widgets_init' );
+	//add_action( 'widgets_init', 'pastry_widgets_init' );
 
 add_theme_support('post-thumbnails');
 	register_nav_menus( array(
@@ -441,6 +441,26 @@ if(function_exists("register_field_group"))
 		),
 		'menu_order' => 0,
 	));
+}
+
+// Default WordPress pagination tweaked to use page numbers
+function bootstrap_pagination(){
+	global $wp_query;
+	$total_pages = $wp_query->max_num_pages;
+	if ($total_pages > 1){
+	  $current_page = max(1, get_query_var('paged'));
+	  echo '<div class="pagination">';
+	  echo paginate_links(array(
+	      'base' => get_pagenum_link(1) . '%_%',
+	      'format' => 'page/%#%',
+	      'current' => $current_page,
+	      'total' => $total_pages,
+	      'prev_text' => 'Prev',
+	      'next_text' => 'Next',
+		  'type' => 'list'
+	    ));
+	  echo '</div>';
+	}
 }
 
 

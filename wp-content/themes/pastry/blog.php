@@ -20,8 +20,8 @@ get_header(); ?>
 				<?php the_content(); ?>
 			</div>
 		
-		<?php comments_number('0 Comments'); ?>
-		<a href="<?php comments_link(); ?>">Leave a Comment</a> 
+			<?php comments_number('0 Comments'); ?>
+			<a href="<?php comments_link(); ?>">Leave a Comment</a> 
 		</article><!-- #post -->
 		
 		<?php endwhile; ?>
@@ -29,6 +29,9 @@ get_header(); ?>
 		<?php else: ?>
 		<!-- no posts found -->
 		<?php endif; ?>	
+
+<?php bootstrap_pagination(); ?>
+
 	</div><!-- .blog-landing -->
 <?php get_sidebar(); ?>
 </section><!-- #page -->

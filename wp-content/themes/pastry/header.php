@@ -24,6 +24,7 @@
 <script src="<?php bloginfo('template_directory') ?>/assets/js/easing.js"></script>
 <script src="<?php bloginfo('template_directory') ?>/assets/js/cycle.js"></script>
 <script src="<?php bloginfo('template_directory') ?>/assets/js/slimbox.js"></script>
+<script src="<?php bloginfo('template_directory') ?>/assets/js/jquery.timeago.js"></script>
 <script src="<?php bloginfo('template_directory') ?>/assets/js/jquery.lifestream.js"></script>
 <script src="<?php bloginfo('template_directory') ?>/assets/js/scripts.js"></script>
 
@@ -63,20 +64,6 @@ jQuery(document).ready(function($){
 		next: '#instagram-carousel .next',
 		timeout: 0		
 	});
-	$(".tweet").tweet({
-	  join_text: "auto",
-	  username: "lovepastry",
-	  avatar_size: 48,
-	  count: 3,
-	  template: "{text}"
-	});	
-	$(".tweetall").tweet({
-	  join_text: "auto",
-	  username: "lovepastry",
-	  avatar_size: 48,
-	  count: 1,
-	  template: "{single_text}"
-	});	
 });
 </script>
 <?php } ?>

@@ -10,6 +10,16 @@
 
   "use strict";
 
+  String.prototype.capitalize = function() {
+      var str = this.replace("_page","");
+      return str.charAt(0).toUpperCase() + str.slice(1);
+  }
+
+  String.prototype.trunc = function(n){
+      return this.substr(0,n-1)+(this.length>n?'&hellip;':'');
+  };  
+
+
   /**
    * Initialize the lifestream plug-in
    * @param {Object} config Configuration object
@@ -31,7 +41,7 @@
         // Callback function which will be triggered when a feed is loaded
         feedloaded: null,
         // The amount of feed items you want to show
-        limit: 10,
+        limit: 3,
         // An array of feed items which you want to use
         list: []
       }, config),
@@ -84,13 +94,12 @@
         // unordered list
         for ( ; i < length; i++ ) {
           item = items[i];
+
           if ( item.html ) {
             $('<li class="'+ settings.classname + '-' +
-               item.config.service + '">').data( "name", item.config.service )
-                                           .data( "url", item.url || "#" )
-                                           .data( "time", item.date )
-                                           .append( item.html )
-                                           .appendTo( ul );
+               item.config.service + '">').append( item.html )
+                                          .append("<span class=\"ago-social\">" + jQuery.timeago(item.date) + "</span><span class=\"on-social\"><a href="+ item.url + ">" + item.config.service.capitalize() + "</a></span>")                                     
+                                          .appendTo( ul );
           }
         }
 
@@ -190,6 +199,12 @@
   }
 
 }( jQuery ));
+
+
+
+
+
+
 (function($) {
 $.fn.lifestream.feeds.bitbucket = function( config, callback ) {
 
@@ -637,7 +652,7 @@ $.fn.lifestream.feeds.facebook_page = function( config, callback ) {
 
   var template = $.extend({},
     {
-      wall_post: '${title}'
+      wall_post: '${description}'
     },
     config.template),
 
@@ -648,21 +663,29 @@ $.fn.lifestream.feeds.facebook_page = function( config, callback ) {
     var output = [], list, i = 0, j;
 
     if(input.query && input.query.count && input.query.count >0) {
-	  list = input.query.results.rss.channel.item;
+      list = input.query.results.rss.channel.item;
       j = list.length;
-      for( ; i<j; i++) {
+      for(i; i<j; i++) {
         var item = list[i];
         if( $.trim( item.title ) ){
+          item.description = stripHtml(item.description).trunc(200);
           output.push({
-            date: new Date(item["pubDate"]),
+            date: new Date(item.pubDate),
             config: config,
-            html: $.tmpl( template.wall_post, item )
+            html: item.description,
+            url: item.link            
           });
         }
       }
     }
     return output;
   };
+
+  var stripHtml = function(html) {
+   var tmp = document.createElement("DIV");
+   tmp.innerHTML = html;
+   return tmp.textContent||tmp.innerText;
+  };  
 
   $.ajax({
     url: $.fn.lifestream.createYqlUrl('select * from xml where url="'
@@ -2108,7 +2131,7 @@ $.fn.lifestream.feeds.twitter = function( config, callback ) {
       for( ; i<j; i++ ) {
         status = input[i];
         output.push({
-          date: new Date(status.created_at),
+          date: new Date( status.created_at),
           config: config,
           html: $.tmpl( template.posted, {
             tweet: linkify(status.text),
