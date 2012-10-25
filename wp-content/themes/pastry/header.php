@@ -40,16 +40,19 @@ jQuery(document).ready(function($){
 		pager: '#slideshow .cycle-pager',
 		easing: 'easeInOutExpo'
 	});
+
 	$('#freshly-baked .cycle').cycle({
 		fx: '<?php echo get_sub_field('freshly_baked')?>',
 		pager: '#freshly-baked .cycle-pager',
 		easing: 'easeInOutExpo'
 	});
-	$('#team-supply .cycle').cycle({
-		fx: '<?php echo get_sub_field('team_supply')?>',
-		pager: '#team-supply .cycle-pager',
-		easing: 'easeInOutExpo'
-	});
+
+	// $('#team-supply .cycle').cycle({
+	// 	fx: '<?php echo get_sub_field('team_supply')?>',
+	// 	pager: '#team-supply .cycle-pager',
+	// 	easing: 'easeInOutExpo'
+	// });
+
 	$('#by-artists .explore-posts').cycle({
 		fx: '<?php echo get_sub_field('explore')?>',
 		easing: 'easeInOutExpo',

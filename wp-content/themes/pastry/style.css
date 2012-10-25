@@ -563,7 +563,7 @@ section#instagram-carousel .prev-next .next a {
   bottom: 50px;
   left: 45%;
 }
-#freshly-baked .cycle-pager {
+#freshly-baked .cycle-pager, #team-supply .cycle-pager {
   bottom: 20px;
   left: 20px;
 }

@@ -203,7 +203,7 @@ get_header(); ?>
 						<li class="mid"><a href="#team-supply">Team Supply</a></li>
 					</ul>
 					
-					
+ 					
 					<div id="freshly-baked" class="tab">
 						<div class="cycle-container">
 							<div class="cycle-pager"></div>
@@ -213,7 +213,7 @@ get_header(); ?>
 									<a href="<?php the_sub_field('fb_link'); ?>">
 										<img src="<?php the_sub_field('fb_preview'); ?>" alt="">
 									</a>
-								</li>
+								</li>								
 								<?php endwhile; ?>
 							</ul>
 						</div>
@@ -221,14 +221,15 @@ get_header(); ?>
 					
 					<div id="team-supply" class="tab">
 						<div class="cycle-container">
-							<div class="cycle-pager"></div>
+							<!-- <div class="cycle-pager"></div> -->							
 							<ul class="cycle">
 								<?php while(has_sub_field('team_supply')): ?>			
 								<li>
-									<a href="<?php the_sub_field('fb_link2'); ?>">
-										<img src="<?php the_sub_field('fb_preview2'); ?>" alt="">
+									<a href="<?php the_sub_field('ts_link'); ?>">
+										<img src="<?php the_sub_field('ts_preview'); ?>" alt="">
 									</a>
 								</li>
+								<?php break; ?>
 								<?php endwhile; ?>
 							</ul>
 						</div>

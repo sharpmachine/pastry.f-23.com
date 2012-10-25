@@ -181,8 +181,8 @@ if(function_exists("register_field_group"))
 					0 => 
 					array (
 						'key' => 'field_507c73579e987',
-						'label' => 'FB Preview',
-						'name' => 'fb_preview2',
+						'label' => 'TS Preview',
+						'name' => 'ts_preview',
 						'type' => 'image',
 						'instructions' => 'W:355px H:505px',
 						'column_width' => '',
@@ -193,8 +193,8 @@ if(function_exists("register_field_group"))
 					1 => 
 					array (
 						'key' => 'field_507c73579f34s',
-						'label' => 'FB Link',
-						'name' => 'fb_link2',
+						'label' => 'TS Link',
+						'name' => 'ts_link',
 						'type' => 'page_link',
 						'instructions' => '',
 						'column_width' => '',
@@ -208,7 +208,7 @@ if(function_exists("register_field_group"))
 					),
 				),
 				'row_min' => '0',
-				'row_limit' => '',
+				'row_limit' => '1',
 				'layout' => 'table',
 				'button_label' => 'Add Slide',
 				'order_no' => '2',
@@ -408,7 +408,29 @@ if(function_exists("register_field_group"))
 						'allow_null' => '0',
 						'multiple' => '0',
 						'order_no' => '2',
-					),
+					),	
+					3 => 
+					array (
+						'choices' => 
+						array (
+							'fade' => 'Fade',
+							'scrollLeft' => 'Scroll Left',
+							'scrollRight' => 'Scroll Right',
+							'scrollUp' => 'Scroll Up',
+							'scrollDown' => 'Scroll Down',
+							'scrollHorz' => 'Scroll Horizontal',
+						),
+						'key' => 'field_507cdeec60bbb',
+						'label' => 'Team Supply',
+						'name' => 'team_supply',
+						'type' => 'select',
+						'instructions' => '',
+						'column_width' => '',
+						'default_value' => 'fade',
+						'allow_null' => '0',
+						'multiple' => '0',
+						'order_no' => '2',
+					),	
 				),
 				'row_min' => '1',
 				'row_limit' => '1',
