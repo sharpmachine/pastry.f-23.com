@@ -254,23 +254,23 @@ get_header(); ?>
 			</div>
 			
 			<div id="fresh-out" class="aside">
-			<h2 class="sec-title">Fresh out of oven</h2>
+				<h2 class="sec-title">Fresh out of oven</h2>
 				<ul class="fresh-posts nostyle">
-<?php
-global $post;
-$posts = get_field('fresh_out_of_oven');
-if( $posts ): ?>
-<?php foreach( $posts as $post): setup_postdata($post); ?>
+					<?php
+					global $post;
+					$posts = get_field('fresh_out_of_oven');
+					if( $posts ): ?>
+					<?php foreach( $posts as $post): setup_postdata($post); ?>
 					<li class="post-type <?php $category = get_the_category(); echo $category[0]->slug; ?>">
-					<div class="excerpt-post">
-						<span class="post-date">__<?php echo get_the_time(get_option('date_format')); ?></span>
-						<h2><a href="<?php the_permalink(); ?>"><?php the_title();  ?></a></h2>
-						<p><?php $excerpt = get_the_excerpt(); echo string_limit_words($excerpt,14); ?>...</p>
-					</div>
+						<div class="excerpt-post">
+							<span class="post-date">__<?php echo get_the_time(get_option('date_format')); ?></span>
+							<h2><a href="<?php the_permalink(); ?>"><?php the_title();  ?></a></h2>
+							<p><?php $excerpt = get_the_excerpt(); echo string_limit_words($excerpt,14); ?>...</p>
+						</div>
 					</li>
-<?php endforeach; ?>
-<?php wp_reset_postdata();
-endif; ?>
+					<?php endforeach; ?>
+					<?php wp_reset_postdata();
+					endif; ?>
 				</ul>
 			</div><!-- #fresh-out -->
 		</section>

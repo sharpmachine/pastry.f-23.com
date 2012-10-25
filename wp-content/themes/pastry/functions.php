@@ -30,11 +30,14 @@ add_action( 'widgets_init', 'pastry_remove_recent_comments_style' );
 if ( function_exists('register_sidebar') )
     	register_sidebar(array(
 		'name'=>'Sidebar',
+		'id' => 'primary-widget-area',
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget' => '</div>',
 		'before_title' => '<h2>',
 		'after_title' => '</h2>'
 	));
+
+	add_action( 'widgets_init', 'pastry_widgets_init' );
 
 add_theme_support('post-thumbnails');
 	register_nav_menus( array(
