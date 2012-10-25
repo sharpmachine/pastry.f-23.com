@@ -11,4 +11,4 @@ jQuery(function($) {
         limit: 3,
         list:[{ service: "twitter", user: "lovepastry"}]
     });
-});    
+});

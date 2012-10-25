@@ -27,6 +27,7 @@
 <script src="<?php bloginfo('template_directory') ?>/assets/js/jquery.lifestream.js"></script>
 <script src="<?php bloginfo('template_directory') ?>/assets/js/scripts.js"></script>
 
+</script>
 
 <?php  while(the_repeater_field('sliders_options', 'options')) { ?>
 <script>
@@ -41,6 +42,11 @@ jQuery(document).ready(function($){
 	$('#freshly-baked .cycle').cycle({
 		fx: '<?php echo get_sub_field('freshly_baked')?>',
 		pager: '#freshly-baked .cycle-pager',
+		easing: 'easeInOutExpo'
+	});
+	$('#team-supply .cycle').cycle({
+		fx: '<?php echo get_sub_field('team_supply')?>',
+		pager: '#team-supply .cycle-pager',
 		easing: 'easeInOutExpo'
 	});
 	$('#by-artists .explore-posts').cycle({

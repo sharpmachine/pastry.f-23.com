@@ -34,6 +34,8 @@
 		<p class="note">&copy; 2012 LovePastry. All Rights Reserved.</p>
 	</footer>
 	
+
+	
 <?php wp_footer(); ?>
 
 </body>

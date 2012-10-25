@@ -637,7 +637,7 @@ $.fn.lifestream.feeds.facebook_page = function( config, callback ) {
 
   var template = $.extend({},
     {
-      wall_post: 'post on wall <a href="${link}">${title}</a>'
+      wall_post: '${title}'
     },
     config.template),
 

@@ -162,7 +162,58 @@ if(function_exists("register_field_group"))
 				'button_label' => 'Add Slide',
 				'order_no' => '1',
 			),
+
+			
+
 			2 => 
+			array (
+				'key' => 'field_507c73579dd7f',
+				'label' => 'Team Supply',
+				'name' => 'team_supply',
+				'type' => 'repeater',
+				'instructions' => '',
+				'required' => '0',
+				'sub_fields' => 
+				array (
+					0 => 
+					array (
+						'key' => 'field_507c73579e987',
+						'label' => 'FB Preview',
+						'name' => 'fb_preview2',
+						'type' => 'image',
+						'instructions' => 'W:355px H:505px',
+						'column_width' => '',
+						'save_format' => 'url',
+						'preview_size' => 'medium',
+						'order_no' => '0',
+					),
+					1 => 
+					array (
+						'key' => 'field_507c73579f34s',
+						'label' => 'FB Link',
+						'name' => 'fb_link2',
+						'type' => 'page_link',
+						'instructions' => '',
+						'column_width' => '',
+						'post_type' => 
+						array (
+							0 => '',
+						),
+						'allow_null' => '0',
+						'multiple' => '0',
+						'order_no' => '1',
+					),
+				),
+				'row_min' => '0',
+				'row_limit' => '',
+				'layout' => 'table',
+				'button_label' => 'Add Slide',
+				'order_no' => '2',
+			),
+
+
+			
+			3 => 
 			array (
 				'key' => 'field_507c73c639f6c',
 				'label' => 'Fresh out of oven',
@@ -180,7 +231,7 @@ if(function_exists("register_field_group"))
 					0 => 'all',
 				),
 				'max' => '2',
-				'order_no' => '2',
+				'order_no' => '3',
 			),
 		),
 		'location' => 
@@ -191,7 +242,7 @@ if(function_exists("register_field_group"))
 				array (
 					'param' => 'page_template',
 					'operator' => '==',
-					'value' => 'index.php',
+					'value' => 'home.php',
 					'order_no' => '0',
 				),
 			),

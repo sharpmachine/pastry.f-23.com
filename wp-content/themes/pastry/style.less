@@ -34,43 +34,6 @@ a { text-decoration: none; color: #e72798;}
 .clear { clear: both;}
 .spacer { clear: both; height: 48px;}
 
-h1 {
-	margin-bottom: 30px;
-	font-size: 40px;
-	font-weight: 400;
-	color: @pink;
-}
-
-h2, 
-h3, 
-h4,
-h5,
-h6 {
-	margin-bottom: 20px;
-	color: @purple;
-}
-
-h2 {
-	font-size: 18px;
-}
-
-h3 {
-	font-size: 16px;
-}
-
-h4 {
-	font-size: 14px;
-}
-
-h5 {
-	text-transform: uppercase;
-	font-size: 12px;
-}
-
-h6 {
-	font-size: 12px;
-}
-
 .page-title {
 	font-family: 'jenna_sueregular';
 	font-size: 90px;
@@ -217,6 +180,30 @@ section#instagram-carousel .prev-next .next a { float: right; background-positio
 .cols .date-social.twitter:before { content: ''; float: left; position: absolute; width: 18px; height: 18px; background: url('assets/img/icons/socialsmallspriteicons.png') no-repeat left; }
 .cols .date-social span { padding-left: 25px; clear: both; display: block; line-height: 14px; font-size: 11px; color: #adadad;}
 
+.lifestream { padding: 40px 20px; position: relative;}
+.lifestream li.lifestream-all,
+.lifestream li.lifestream-facebook_page,
+.lifestream li.lifestream-twitter
+{ 
+	width: 28%; 
+	vertical-align: text-top;
+	overflow: hidden; 
+	display: inline-block; 
+	position: relative; 
+	height: 215px; 
+	line-height: 20px;
+	margin-right: 40px;
+
+	&:last-child {
+		margin-right: 0;
+	}
+}
+
+.lifestream .date-social { border-top: 1px solid #d9d9d9; padding-top: 15px; position: absolute; bottom: 0; width: 100%;}
+.lifestream .date-social.facebook:before { content: ''; float: left; position: absolute; width: 18px; height: 18px; background: url('assets/img/icons/socialsmallspriteicons.png') no-repeat right; }
+.lifestream .date-social.twitter:before { content: ''; float: left; position: absolute; width: 18px; height: 18px; background: url('assets/img/icons/socialsmallspriteicons.png') no-repeat left; }
+.lifestream .date-social span { padding-left: 25px; clear: both; display: block; line-height: 14px; font-size: 11px; color: #adadad;}
+
 /* PAGE CONTENT */
 #page-content {
 	padding: 0 20px 80px 20px;
@@ -226,12 +213,48 @@ section#instagram-carousel .prev-next .next a { float: right; background-positio
 	color: @gray;
 	font-weight: 500;
 	}
-}
 
-.page-title {
-	font-family: 'jenna_sueregular';
-	font-size: 90px;
-	color: #e62799;
+	h1.page-title {
+		font-size: 90px;
+		font-weight: 600;
+	}
+
+	h1 {
+	margin-bottom: 30px;
+	font-size: 40px;
+	font-weight: 400;
+	color: @pink;
+	}
+
+	h2, 
+	h3, 
+	h4,
+	h5,
+	h6 {
+		margin-bottom: 20px;
+		color: @purple;
+	}
+
+	h2 {
+		font-size: 18px;
+	}
+
+	h3 {
+		font-size: 16px;
+	}
+
+	h4 {
+		font-size: 14px;
+	}
+
+	h5 {
+		text-transform: uppercase;
+		font-size: 12px;
+	}
+
+	h6 {
+		font-size: 12px;
+	}
 }
 
 /* FOOTER */
