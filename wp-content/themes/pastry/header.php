@@ -18,9 +18,15 @@
 <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 <link rel="icon" type="image/png" href="<?php echo get_template_directory_uri(); ?>/favicon.png" />
+
+
+<!--[if lt IE 9]>
+<script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
+<![endif]-->
+
+
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script src="http://code.jquery.com/ui/1.9.0/jquery-ui.js"></script>
-
 <script src="<?php bloginfo('template_directory') ?>/assets/js/easing.js"></script>
 <script src="<?php bloginfo('template_directory') ?>/assets/js/cycle.js"></script>
 <script src="<?php bloginfo('template_directory') ?>/assets/js/slimbox.js"></script>
@@ -28,8 +34,21 @@
 <script src="<?php bloginfo('template_directory') ?>/assets/js/jquery.lifestream.js"></script>
 <script src="<?php bloginfo('template_directory') ?>/assets/js/scripts.js"></script>
 
-</script>
+<!--[if lt IE 9]>
+<script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
+<![endif]-->
 
+<!--[if lt IE 9]>
+<style type="text/css">
+	nav#main {
+		margin-top: 0;
+	}
+	
+	.lifestream li.lifestream-all, .lifestream li.lifestream-facebook_page, .lifestream li.lifestream-twitter {
+		
+	}
+</style>
+<![endif]-->
 <?php  while(the_repeater_field('sliders_options', 'options')) { ?>
 <script>
 jQuery(document).ready(function($){

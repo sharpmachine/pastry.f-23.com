@@ -292,9 +292,9 @@ if(function_exists("register_field_group"))
 					),
 					1 => 
 					array (
-						'key' => 'field_507cdb310c912',
-						'label' => 'Twitter',
-						'name' => 'twitter',
+						'key' => 'field_507ddb310c912',
+						'label' => 'Tumblr',
+						'name' => 'tumblr',
 						'type' => 'text',
 						'instructions' => '',
 						'column_width' => '',
@@ -304,9 +304,9 @@ if(function_exists("register_field_group"))
 					),
 					2 => 
 					array (
-						'key' => 'field_507cdb310ccfa',
-						'label' => 'YouTube',
-						'name' => 'youtube',
+						'key' => 'field_507cdb310c912',
+						'label' => 'Twitter',
+						'name' => 'twitter',
 						'type' => 'text',
 						'instructions' => '',
 						'column_width' => '',
@@ -315,6 +315,30 @@ if(function_exists("register_field_group"))
 						'order_no' => '2',
 					),
 					3 => 
+					array (
+						'key' => 'field_507cdb310ccfa',
+						'label' => 'YouTube',
+						'name' => 'youtube',
+						'type' => 'text',
+						'instructions' => '',
+						'column_width' => '',
+						'default_value' => '',
+						'formatting' => 'none',
+						'order_no' => '4',
+					),
+					4 => 
+					array (
+						'key' => 'field_597cdb310c912',
+						'label' => 'Pinterest',
+						'name' => 'pinterest',
+						'type' => 'text',
+						'instructions' => '',
+						'column_width' => '',
+						'default_value' => '',
+						'formatting' => 'none',
+						'order_no' => '5',
+					),
+					5 => 
 					array (
 						'key' => 'field_507cdb310d15f',
 						'label' => 'Instagram',
