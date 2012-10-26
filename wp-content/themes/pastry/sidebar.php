@@ -2,18 +2,21 @@
 	<div id="fresh-out" class="sb">
 		<h2 class="sec-title">Fresh out of the oven</h2>
 		<ul class="fresh-posts nostyle">
-		<?php query_posts("cat=-5&posts_per_page=2"); ?>
-			<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-			
+			<?php
+			global $post;
+			$posts = get_field('fresh_out_of_oven', 6);
+			if( $posts ): ?>
+			<?php foreach( $posts as $post): setup_postdata($post); ?>
 			<li class="post-type <?php $category = get_the_category(); echo $category[0]->slug; ?>">
 				<div class="excerpt-post">
 					<span class="post-date">__<?php echo get_the_time(get_option('date_format')); ?></span>
 					<h2><a href="<?php the_permalink(); ?>"><?php the_title();  ?></a></h2>
 					<p><?php $excerpt = get_the_excerpt(); echo string_limit_words($excerpt,14); ?>...</p>
 				</div>
-			</li>			
-			
-			<?php endwhile; endif; ?>
+			</li>
+			<?php endforeach; ?>
+			<?php wp_reset_postdata();
+					endif; ?>
 		</ul>
 	</div><!-- #fresh-out -->
 	
