@@ -1,6 +1,6 @@
 <section id="sidebar">
 	<div id="fresh-out" class="sb">
-		<h2 class="sec-title">Fresh out of oven</h2>
+		<h2 class="sec-title">Fresh out of the oven</h2>
 		<ul class="fresh-posts nostyle">
 		<?php query_posts("cat=-5&posts_per_page=2"); ?>
 			<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>

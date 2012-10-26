@@ -477,7 +477,7 @@ function bootstrap_pagination(){
 	      'format' => 'page/%#%',
 	      'current' => $current_page,
 	      'total' => $total_pages,
-	      'prev_text' => 'Prev',
+	      'prev_text' => 'Previous',
 	      'next_text' => 'Next',
 		  'type' => 'list'
 	    ));

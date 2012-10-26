@@ -99,8 +99,9 @@ jQuery(document).ready(function($){
 
 			</nav>
 			<div id="search-box">
-			<form>
+			<!-- <form>
 				<input type="text" placeholder="Search">
-			</form>
+			</form> -->
+			<?php get_search_form(); ?>
 			</div><!-- #main -->
 		</header>

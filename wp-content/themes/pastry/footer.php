@@ -3,11 +3,12 @@
 		<div id="recently-viewed" class="widget"></div>
 		
 		<div id="newsletter" class="widget">
-		<h3>Newsletter</h3>
-		<p>Exclusive offer when you sign up</p>
-		<form>
-			<input type="text" placeholder="Your email address"><input type="submit" value="Submit">
-		</form>
+			<h3>Newsletter</h3>
+			<p>Exclusive offer when you sign up</p>
+			<form>
+				<input type="text" placeholder="Your email address">
+				<input type="submit" value="Submit">
+			</form>
 		</div><!-- #newsletter -->
 		
 		<div id="stay-connected" class="widget">
