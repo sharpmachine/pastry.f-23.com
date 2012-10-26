@@ -12,7 +12,3 @@ jQuery(function($) {
         list:[{ service: "twitter", user: "lovepastry"}]
     });
 });
-
-jQuery(function($) {
-    $("#date-social").addClass("facebook");
-});

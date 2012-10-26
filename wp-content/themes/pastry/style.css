@@ -595,7 +595,7 @@ section#instagram-carousel .prev-next .next a {
   background-position: left top;
 }
 /* COLUMNS */
-.cols {
+/*.cols {
   padding: 40px 20px;
   position: relative;
 }
@@ -614,7 +614,7 @@ section#instagram-carousel .prev-next .next a {
 .cols .col.last {
   float: right;
 }
-.cols #date-social {
+.cols .date-social {
   border-top: 1px solid #d9d9d9;
   padding-top: 15px;
   position: absolute;
@@ -644,7 +644,7 @@ section#instagram-carousel .prev-next .next a {
   line-height: 14px;
   font-size: 11px;
   color: #adadad;
-}
+}*/
 .lifestream {
   padding: 40px 20px;
   position: relative;
@@ -666,14 +666,14 @@ section#instagram-carousel .prev-next .next a {
 .lifestream li.lifestream-twitter:last-child {
   margin-right: 0;
 }
-.lifestream #date-social {
+.lifestream .date-social {
   border-top: 1px solid #d9d9d9;
   padding-top: 15px;
   position: absolute;
   bottom: 0;
   width: 100%;
 }
-.lifestream #date-social.facebook:before {
+.lifestream .date-social.facebook_page:before {
   content: '';
   float: left;
   position: absolute;
@@ -681,7 +681,7 @@ section#instagram-carousel .prev-next .next a {
   height: 18px;
   background: url('assets/img/icons/socialsmallspriteicons.png') no-repeat right;
 }
-.lifestream #date-social.twitter:before {
+.lifestream .date-social.twitter:before {
   content: '';
   float: left;
   position: absolute;
@@ -689,7 +689,7 @@ section#instagram-carousel .prev-next .next a {
   height: 18px;
   background: url('assets/img/icons/socialsmallspriteicons.png') no-repeat left;
 }
-.lifestream #date-social span {
+.lifestream .date-social span {
   padding-left: 25px;
   clear: both;
   display: block;

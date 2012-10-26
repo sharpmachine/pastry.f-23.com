@@ -6,10 +6,14 @@ get_header(); ?>
 
 <section id="page-content" class="top">
 	<h1 class="page-title"><?php the_title(); ?></h1>
-	<div class="blog-landing">
-		<?php query_posts("cat=-0"); ?>
-		<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-		
+	<div class="blog-landing">	
+		<?php
+			$temp = $wp_query;
+			$wp_query= null;
+			$wp_query = new WP_Query();
+			$wp_query->query('posts_per_page=5'.'&paged='.$paged);
+			while ($wp_query->have_posts()) : $wp_query->the_post();
+		?>
 		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 			<div class="date-of-post">
 				<?php the_time('F j, Y'); ?>
@@ -25,12 +29,10 @@ get_header(); ?>
 		</article><!-- #post -->
 		
 		<?php endwhile; ?>
-		<!-- post navigation -->
-		<?php else: ?>
-		<!-- no posts found -->
-		<?php endif; ?>	
+		
+		<?php bootstrap_pagination(); ?>
 
-<?php bootstrap_pagination(); ?>
+		<?php $wp_query = null; $wp_query = $temp;?>
 
 	</div><!-- .blog-landing -->
 <?php get_sidebar(); ?>
