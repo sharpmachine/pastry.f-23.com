@@ -563,7 +563,11 @@ section#instagram-carousel .prev-next .next a {
   bottom: 50px;
   left: 45%;
 }
-#freshly-baked .cycle-pager, #team-supply .cycle-pager {
+#freshly-baked .cycle-pager {
+  bottom: 20px;
+  left: 20px;
+}
+#team-supply .cycle-pager {
   bottom: 20px;
   left: 20px;
 }
@@ -610,14 +614,14 @@ section#instagram-carousel .prev-next .next a {
 .cols .col.last {
   float: right;
 }
-.cols .date-social {
+.cols #date-social {
   border-top: 1px solid #d9d9d9;
   padding-top: 15px;
   position: absolute;
   bottom: 0;
   width: 100%;
 }
-.cols .date-social.facebook:before {
+.cols #date-social.facebook:before {
   content: '';
   float: left;
   position: absolute;
@@ -625,7 +629,7 @@ section#instagram-carousel .prev-next .next a {
   height: 18px;
   background: url('assets/img/icons/socialsmallspriteicons.png') no-repeat right;
 }
-.cols .date-social.twitter:before {
+.cols #date-social.twitter:before {
   content: '';
   float: left;
   position: absolute;
@@ -633,7 +637,7 @@ section#instagram-carousel .prev-next .next a {
   height: 18px;
   background: url('assets/img/icons/socialsmallspriteicons.png') no-repeat left;
 }
-.cols .date-social span {
+.cols #date-social span {
   padding-left: 25px;
   clear: both;
   display: block;
@@ -662,14 +666,14 @@ section#instagram-carousel .prev-next .next a {
 .lifestream li.lifestream-twitter:last-child {
   margin-right: 0;
 }
-.lifestream .date-social {
+.lifestream #date-social {
   border-top: 1px solid #d9d9d9;
   padding-top: 15px;
   position: absolute;
   bottom: 0;
   width: 100%;
 }
-.lifestream .date-social.facebook:before {
+.lifestream #date-social.facebook:before {
   content: '';
   float: left;
   position: absolute;
@@ -677,7 +681,7 @@ section#instagram-carousel .prev-next .next a {
   height: 18px;
   background: url('assets/img/icons/socialsmallspriteicons.png') no-repeat right;
 }
-.lifestream .date-social.twitter:before {
+.lifestream #date-social.twitter:before {
   content: '';
   float: left;
   position: absolute;
@@ -685,7 +689,7 @@ section#instagram-carousel .prev-next .next a {
   height: 18px;
   background: url('assets/img/icons/socialsmallspriteicons.png') no-repeat left;
 }
-.lifestream .date-social span {
+.lifestream #date-social span {
   padding-left: 25px;
   clear: both;
   display: block;

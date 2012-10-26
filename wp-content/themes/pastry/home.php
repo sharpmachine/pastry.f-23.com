@@ -82,7 +82,7 @@ get_header(); ?>
 									<div class="excerpt-post">
 										<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 										<p><?php $excerpt = get_the_excerpt(); echo string_limit_words($excerpt,14); ?>...</p>
-										<span class="post-views"><?php the_views(); ?></span>
+										<span class="post-views"><?php if(function_exists('the_views')) { the_views(); } ?></span>
 									</div>
 								</li>
 		<?php $i++;

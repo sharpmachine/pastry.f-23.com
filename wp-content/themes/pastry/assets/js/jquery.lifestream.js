@@ -98,7 +98,7 @@
           if ( item.html ) {
             $('<li class="'+ settings.classname + '-' +
                item.config.service + '">').append( item.html )
-                                          .append("<span class=\"ago-social\">" + jQuery.timeago(item.date) + "</span><span class=\"on-social\"><a href="+ item.url + ">" + item.config.service.capitalize() + "</a></span>")                                     
+                                          .append("<div id='date-social'><span class=\"ago-social\">" + jQuery.timeago(item.date) + "</span><span class=\"on-social\"><a href="+ item.url + ">" + item.config.service.capitalize() + "</a></span></div")                                     
                                           .appendTo( ul );
           }
         }
