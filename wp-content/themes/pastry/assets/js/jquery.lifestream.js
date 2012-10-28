@@ -2130,7 +2130,7 @@ $.fn.lifestream.feeds.twitter = function( config, callback ) {
       j = input.length;
       for( ; i<j; i++ ) {
         status = input[i];
-        var clean_date = status.created_at.replace("+000000 ","");;
+        var clean_date = status.created_at.replace("+000000 ","");
         output.push({
           date: new Date(clean_date),
           config: config,

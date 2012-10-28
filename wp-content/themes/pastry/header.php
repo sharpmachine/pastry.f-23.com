@@ -12,7 +12,15 @@
 	if ( $paged >= 2 || $page >= 2 )
 		echo ' | ' . sprintf( __( 'Page %s', 'patry' ), max( $paged, $page ) );
 	?></title>
+
+<!--[if IE 7]>
 <meta http-equiv="X-UA-Compatible" content="chrome=1">
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js"></script>
+
+<script type="text/javascript">
+alert(new Date("Sun Oct 28 2012 11:00:55 GMT-0700 (PDT)"))
+</script>
+<![endif]-->
 <meta name="description" content="<?php bloginfo('description'); ?>" />
 <meta name="keywords" content="" />
 <link rel="profile" href="http://gmpg.org/xfn/11" />
@@ -20,35 +28,10 @@
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 <link rel="icon" type="image/png" href="<?php echo get_template_directory_uri(); ?>/favicon.png" />
 
-<!--[if lt IE 9]>
+<!--[if IE 8]>
 <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
 <link rel="stylesheet" href="<?php bloginfo('template_directory') ?>/css/ie.css" />
 <![endif]-->
-
-<!--[if IE 7]>
-    <script type="text/javascript" 
-     src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js"></script>
-
-    <style>
-     .chromeFrameInstallDefaultStyle {
-       border: 5px solid blue;
-        top:55%;
-     }
-    </style>
-
-
-
-    <script>
-     // The conditional ensures that this code will only execute in IE,
-     // Therefore we can use the IE-specific attachEvent without worry
-     window.attachEvent("onload", function() {
-       CFInstall.check({
-         mode: "inline" 
-       });
-     });
-    </script>
-  <![endif]-->
-
 
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script src="http://code.jquery.com/ui/1.9.0/jquery-ui.js"></script>
