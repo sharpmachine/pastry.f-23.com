@@ -401,7 +401,7 @@ $.fn.lifestream.feeds.citeulike = function( config, callback ) {
           date: new Date(item.date),
           config: config,
           url: 'http://www.citeulike.org/user/' + config.user,
-          html: $.tmpl( template.saved, item ),
+          html: $.tmpl( template.saved, item )
         });
       }
     }
@@ -2382,7 +2382,7 @@ $.fn.lifestream.feeds.zotero = function( config, callback ) {
           date: new Date(item.updated),
           config: config,
           url: 'http://zotero.com/users/' + config.user,
-          html: $.tmpl( template.flagged, item ),
+          html: $.tmpl( template.flagged, item )
         });
       }
     }

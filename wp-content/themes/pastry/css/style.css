@@ -51,9 +51,6 @@ a {
 .page-title:after {
   content: "...";
 }
-a img {
-  border: none;
-}
 textarea:focus,
 input:focus {
   outline: none !important;
@@ -805,9 +802,9 @@ section#instagram-carousel .prev-next .next a {
   height: 45px;
   width: 40px;
   margin-right: 13px;
-  background: url(assets/img/leave-comment.png) no-repeat center center;
+  background: url(assets/img/comment-count.png) no-repeat center center;
   position: relative;
-  top: -14px;
+  top: -12px;
 }
 article.page .comment-system {
   display: none;
@@ -951,7 +948,7 @@ footer #newsletter input[type='submit'] {
 /**/
 footer #stay-connected {
   float: right;
-  width: 281px;
+  width: 245px;
   height: 115px;
 }
 footer #stay-connected a {
@@ -970,20 +967,14 @@ footer #stay-connected a:hover {
 footer #stay-connected a.facebook {
   background-position: left;
 }
-footer #stay-connected a.tumblr {
-  background-position: -48px;
-}
 footer #stay-connected a.twitter {
-  background-position: -98px;
+  background-position: -48px;
 }
 footer #stay-connected a.instagram {
   background-position: -148px;
 }
 footer #stay-connected a.youtube {
   background-position: -197px;
-}
-footer #stay-connected a.pinterest {
-  background-position: right;
 }
 /**/
 footer nav {

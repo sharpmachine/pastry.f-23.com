@@ -14,7 +14,7 @@
  * Copyright (c) 2008-2012, Ryan McGeary (ryan -[at]- mcgeary [*dot*] org)
  */
 (function($) {
-  $.timeago = function(timestamp) {
+  $.timeago = function(timestamp) { 
     if (timestamp instanceof Date) {
       return inWords(timestamp);
     } else if (typeof timestamp === "string") {
