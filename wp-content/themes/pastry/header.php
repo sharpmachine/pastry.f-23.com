@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html <?php language_attributes(); ?>>
+<html <?php language_attributes(); ?> class="no-js">
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
 <title><?php
@@ -12,6 +12,7 @@
 	if ( $paged >= 2 || $page >= 2 )
 		echo ' | ' . sprintf( __( 'Page %s', 'patry' ), max( $paged, $page ) );
 	?></title>
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
 <meta name="description" content="<?php bloginfo('description'); ?>" />
 <meta name="keywords" content="" />
 <link rel="profile" href="http://gmpg.org/xfn/11" />
@@ -19,10 +20,34 @@
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 <link rel="icon" type="image/png" href="<?php echo get_template_directory_uri(); ?>/favicon.png" />
 
-
 <!--[if lt IE 9]>
 <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
+<link rel="stylesheet" href="<?php bloginfo('template_directory') ?>/css/ie.css" />
 <![endif]-->
+
+<!--[if IE 7]>
+    <script type="text/javascript" 
+     src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js"></script>
+
+    <style>
+     .chromeFrameInstallDefaultStyle {
+       border: 5px solid blue;
+        top:55%;
+     }
+    </style>
+
+
+
+    <script>
+     // The conditional ensures that this code will only execute in IE,
+     // Therefore we can use the IE-specific attachEvent without worry
+     window.attachEvent("onload", function() {
+       CFInstall.check({
+         mode: "inline" 
+       });
+     });
+    </script>
+  <![endif]-->
 
 
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
@@ -34,21 +59,6 @@
 <script src="<?php bloginfo('template_directory') ?>/assets/js/jquery.lifestream.js"></script>
 <script src="<?php bloginfo('template_directory') ?>/assets/js/scripts.js"></script>
 
-<!--[if lt IE 9]>
-<script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
-<![endif]-->
-
-<!--[if lt IE 9]>
-<style type="text/css">
-	nav#main {
-		margin-top: 0;
-	}
-	
-	.lifestream li.lifestream-all, .lifestream li.lifestream-facebook_page, .lifestream li.lifestream-twitter {
-		
-	}
-</style>
-<![endif]-->
 <?php  while(the_repeater_field('sliders_options', 'options')) { ?>
 <script>
 jQuery(document).ready(function($){
@@ -112,15 +122,12 @@ jQuery(document).ready(function($){
 				</nav>
 			</hgroup>
 			<nav id="main">
-				<h1 id="logo"><a href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?>&trade;</a></h1>
-
-<?php wp_nav_menu( array( 'theme_location' => 'primary', 'container' => '', 'items_wrap' => '<ul class="prime">%3$s</ul>' ) ); ?>
-
+				<h1 id="logo">
+					<a href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?>&trade;</a>
+				</h1>
+				<?php wp_nav_menu( array( 'theme_location' => 'primary', 'container' => '', 'items_wrap' => '<ul class="prime">%3$s</ul>' ) ); ?>
 			</nav>
 			<div id="search-box">
-			<!-- <form>
-				<input type="text" placeholder="Search">
-			</form> -->
-			<?php get_search_form(); ?>
-			</div><!-- #main -->
+				<?php get_search_form(); ?>
+			</div><!-- #search-box -->
 		</header>

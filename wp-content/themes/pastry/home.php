@@ -4,58 +4,62 @@
 */
 get_header(); ?>
 	
-		<section class="top" id="slideshow">
-			<div class="cycle-container">
-			<div class="cycle-pager"></div>
-				<ul class="cycle">
-<?php while(the_repeater_field('featured_slides')): ?>			
-					<li><a href="<?php the_sub_field('featured_link'); ?>"><img src="<?php the_sub_field('featured_preview'); ?>" alt=""></a></li>
-<?php endwhile; ?>
-				</ul>
-			</div>		
-		</section><!-- #slideshow -->
+<section class="top" id="slideshow">
+	<div class="cycle-container">
+		<div class="cycle-pager"></div>
+			<ul class="cycle">
+				<?php while(the_repeater_field('featured_slides')): ?>			
+				<li>
+					<a href="<?php the_sub_field('featured_link'); ?>">
+						<img src="<?php the_sub_field('featured_preview'); ?>" alt="" width="1000" height="520">
+					</a>
+				</li>
+				<?php endwhile; ?>
+			</ul>
+		</div>		
+</section><!-- #slideshow -->
 		
-		<section id="instagram-carousel">
-			<div class="prev-next">
-				<span class="prev"><a href="javascript:void(0)">Prev</a></span>
-				<span class="next"><a href="javascript:void(0)">Next</a></span>
-			</div>	
-			<div class="grams">
+<section id="instagram-carousel">
+	<div class="prev-next">
+		<span class="prev"><a href="javascript:void(0)">Prev</a></span>
+		<span class="next"><a href="javascript:void(0)">Next</a></span>
+	</div>	
+	<div class="grams">
 
-			<?php
-			 	$rss = new DOMDocument();
-			 	$rss->load('http://followgram.me/lovepastry/rss');
-			 	$feed = array();
-				
-				foreach ($rss->getElementsByTagName('item') as $node) {
-					array_push($feed, $node->getElementsByTagName('description')->item(0)->nodeValue);
-				}
+	<?php
+	 	$rss = new DOMDocument();
+	 	$rss->load('http://followgram.me/lovepastry/rss');
+	 	$feed = array();
+		
+		foreach ($rss->getElementsByTagName('item') as $node) {
+			array_push($feed, $node->getElementsByTagName('description')->item(0)->nodeValue);
+		}
 
+		$i = 0;
+		$display_count = 18;
+
+		$imgpattern = '/src="(.*?)"/i';
+		for($x = 0; $x < $display_count; $x++) {
+			//foreach ($feed as $link_code) {
+			if( $i == 0 ) {
+				echo '<ul class="cycle nostyle">';
+			}
+			$link_code = $feed[$x];
+			preg_match($imgpattern, $link_code, $links);
+			echo '<li><a href="'.$links[1].'" rel="lightbox"><img src="'.$links[1].'"/></a></li>';					
+			if( $i == 5 ) {
+				echo '</ul>';
 				$i = 0;
-				$display_count = 18;
 
-				$imgpattern = '/src="(.*?)"/i';
-				for($x = 0; $x < $display_count; $x++) {
-					//foreach ($feed as $link_code) {
-					if( $i == 0 ) {
-						echo '<ul class="cycle nostyle">';
-					}
-					$link_code = $feed[$x];
-					preg_match($imgpattern, $link_code, $links);
-					echo '<li><a href="'.$links[1].'" rel="lightbox"><img src="'.$links[1].'"/></a></li>';					
-					if( $i == 5 ) {
-						echo '</ul>';
-						$i = 0;
+			}
+			else {
+				$i++;
+			}
 
-					}
-					else {
-						$i++;
-					}
-
-				}	
-			?>
-			</div>
-		</section><!-- #instagram-carousel -->
+		}	
+	?>
+	</div>
+</section><!-- #instagram-carousel -->
 		
 		<section class="block">
 			<div id="explore" class="main">

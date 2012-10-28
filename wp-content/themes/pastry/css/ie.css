@@ -1,0 +1,9 @@
+nav#main {
+		margin-top: 0;
+	}
+	
+	.lifestream li.lifestream-all,
+	.lifestream li.lifestream-facebook_page,
+	.lifestream li.lifestream-twitter { 
+		margin-right: 27px;
+	}
