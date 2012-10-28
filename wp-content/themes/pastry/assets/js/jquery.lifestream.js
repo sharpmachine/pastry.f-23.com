@@ -668,7 +668,7 @@ $.fn.lifestream.feeds.facebook_page = function( config, callback ) {
       for(i; i<j; i++) {
         var item = list[i];
         if( $.trim( item.title ) ){
-          item.description = stripHtml(item.description).trunc(200);
+          item.description = stripHtml(item.description).trunc(180);
           output.push({
             date: new Date(item.pubDate),
             config: config,
@@ -2130,8 +2130,9 @@ $.fn.lifestream.feeds.twitter = function( config, callback ) {
       j = input.length;
       for( ; i<j; i++ ) {
         status = input[i];
+        var clean_date = status.created_at.split("+");
         output.push({
-          date: new Date( status.created_at),
+          date: new Date( clean_date[0] ),
           config: config,
           html: $.tmpl( template.posted, {
             tweet: linkify(status.text),

@@ -16,7 +16,11 @@
 		<p>on mobile, Facebook, Twitter and YouTube.</p>
 		
 		<?php the_repeater_field('social_links', 'options'); ?>
-		<p><a target="_blank" href="http://facebook.com/<?php echo get_sub_field('facebook')?>" class="facebook" title="Like <?php bloginfo('name'); ?> on Facebook">Facebook</a> <a target="_blank" href="http://twitter.com/<?php echo get_sub_field('twitter')?>" class="twitter" title="Follow <?php bloginfo('name'); ?> on Twitter">Twitter</a> <a target="_blank" href="http://followgram.me/<?php echo get_sub_field('instagram')?>" class="instagram" title="Subscribe <?php bloginfo('name'); ?> on Instagram">Instagram</a> <a target="_blank" href="http://youtube.com/user/<?php echo get_sub_field('youtube')?>" class="youtube" title="Subscribe <?php bloginfo('name'); ?> on YouTube">YouTube</a></p>
+		<p>
+			<a target="_blank" href="http://facebook.com/<?php echo get_sub_field('facebook')?>" class="facebook" title="Like <?php bloginfo('name'); ?> on Facebook">Facebook</a>
+			<a target="_blank" href="http://twitter.com/<?php echo get_sub_field('twitter')?>" class="twitter" title="Follow <?php bloginfo('name'); ?> on Twitter">Twitter</a> 
+			<a target="_blank" href="http://followgram.me/<?php echo get_sub_field('instagram')?>" class="instagram" title="Subscribe <?php bloginfo('name'); ?> on Instagram">Instagram</a> 
+			<a target="_blank" href="http://youtube.com/user/<?php echo get_sub_field('youtube')?>" class="youtube" title="Subscribe <?php bloginfo('name'); ?> on YouTube">YouTube</a></p>
 		</div><!-- #stay-connected -->
 		
 		<div class="clear"></div>

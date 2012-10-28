@@ -23,9 +23,12 @@ get_header(); ?>
 			<div class="grams">
 
 			<?php
+
 			 	$rss = new DOMDocument();
 			 	$rss->load('http://followgram.me/lovepastry/rss');
 			 	$feed = array();
+
+			 	ini_set ('allow_url_fopen', 1);
 				
 				foreach ($rss->getElementsByTagName('item') as $node) {
 					array_push($feed, $node->getElementsByTagName('description')->item(0)->nodeValue);
