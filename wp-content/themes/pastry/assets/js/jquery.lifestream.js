@@ -2130,9 +2130,8 @@ $.fn.lifestream.feeds.twitter = function( config, callback ) {
       j = input.length;
       for( ; i<j; i++ ) {
         status = input[i];
-        var clean_date = status.created_at.replace("+000000 ","");;
         output.push({
-          date: new Date(clean_date),
+          date: new Date(Date.parse(status.created_at)),
           config: config,
           html: $.tmpl( template.posted, {
             tweet: linkify(status.text),
