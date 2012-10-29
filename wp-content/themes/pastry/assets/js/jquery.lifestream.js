@@ -6,6 +6,16 @@
  * Copyright 2011, Christian Vuerings - http://denbuzze.com
  */
 /*globals jQuery, $ */
+
+function parseTwitterDate(text) {
+  //running regex to grab everything after the time
+  var newtext = text.replace(/(\d{1,2}[:]\d{2}[:]\d{2}) (.*)/, '$2 $1');
+  //moving the time code to the end
+  newtext = newtext.replace(/(\+\S+) (.*)/, '$2 $1');
+  var date = new Date(Date.parse(newtext));
+  return date;
+}
+
 ;(function( $ ){
 
   "use strict";
@@ -17,8 +27,7 @@
 
   String.prototype.trunc = function(n){
       return this.substr(0,n-1)+(this.length>n?'&hellip;':'');
-  };  
-
+  }
 
   /**
    * Initialize the lifestream plug-in
@@ -2131,7 +2140,7 @@ $.fn.lifestream.feeds.twitter = function( config, callback ) {
       for( ; i<j; i++ ) {
         status = input[i];
         output.push({
-          date: new Date(Date.parse(status.created_at)),
+          date: parseTwitterDate(status.created_at),
           config: config,
           html: $.tmpl( template.posted, {
             tweet: linkify(status.text),
