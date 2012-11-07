@@ -219,10 +219,31 @@ if(function_exists("register_field_group"))
 			3 => 
 			array (
 				'key' => 'field_507c73c639f6c',
-				'label' => 'Fresh out of oven',
+				'label' => 'Tasty Tidbits',
 				'name' => 'fresh_out_of_oven',
 				'type' => 'relationship',
 				'instructions' => 'Maximum of 2 posts.',
+				'required' => '0',
+				'post_type' => 
+				array (
+					0 => 'post',
+					1 => 'page',
+				),
+				'taxonomy' => 
+				array (
+					0 => 'all',
+				),
+				'max' => '2',
+				'order_no' => '3',
+			),
+
+			4 => 
+			array (
+				'key' => 'field_507c73c63ff6c',
+				'label' => 'iTunes Playlist',
+				'name' => 'itunes',
+				'type' => 'text',
+				'instructions' => '325 x 370',
 				'required' => '0',
 				'post_type' => 
 				array (

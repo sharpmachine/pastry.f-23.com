@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html <?php language_attributes(); ?> class="no-js">
+<html <?php language_attributes(); ?>>
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
 <title><?php
@@ -16,6 +16,7 @@
 <meta name="description" content="<?php bloginfo('description'); ?>" />
 <meta name="keywords" content="" />
 <link rel="profile" href="http://gmpg.org/xfn/11" />
+<link href='http://fonts.googleapis.com/css?family=Oxygen:400,300,700' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 <link rel="icon" type="image/png" href="<?php echo get_template_directory_uri(); ?>/favicon.png" />
@@ -30,8 +31,8 @@
 <script src="<?php bloginfo('template_directory') ?>/assets/js/easing.js"></script>
 <script src="<?php bloginfo('template_directory') ?>/assets/js/cycle.js"></script>
 <script src="<?php bloginfo('template_directory') ?>/assets/js/slimbox.js"></script>
-<script src="<?php bloginfo('template_directory') ?>/assets/js/jquery.timeago.js"></script>
-<script src="<?php bloginfo('template_directory') ?>/assets/js/jquery.lifestream.js"></script>
+<script src="<?php bloginfo('template_directory') ?>/assets/js/jquery.timeago-ck.js"></script>
+<script src="<?php bloginfo('template_directory') ?>/assets/js/jquery.lifestream-ck.js"></script>
 <script src="<?php bloginfo('template_directory') ?>/assets/js/scripts.js"></script>
 
 <?php  while(the_repeater_field('sliders_options', 'options')) { ?>

@@ -677,7 +677,7 @@ $.fn.lifestream.feeds.facebook_page = function( config, callback ) {
       for(i; i<j; i++) {
         var item = list[i];
         if( $.trim( item.title ) ){
-          item.description = stripHtml(item.description).trunc(180);
+          item.description = stripHtml(item.description).trunc(170);
           output.push({
             date: new Date(item.pubDate),
             config: config,

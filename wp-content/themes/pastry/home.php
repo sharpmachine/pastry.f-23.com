@@ -60,144 +60,115 @@ get_header(); ?>
 	?>
 	</div>
 </section><!-- #instagram-carousel -->
-		
-		<section class="block">
-			<div id="explore" class="main">
-			<h2 class="sec-title">Explore</h2>
-				<div class="tabs">
-					<ul class="tab-menu">
-						<li><a href="#by-artists">By Artists</a></li>
-						<li class="mid"><a href="#by-video">By Video</a></li>
-						<li><a href="#by-music">By Music</a></li>
+
+<section class="block">
+	<div id="explore" class="main">
+		<h2 class="sec-title">Explore</h2>
+		<div class="tabs">
+			<ul class="tab-menu">
+				<li>
+					<a href="#by-artists">By Artists</a>
+				</li>
+				<li class="mid">
+					<a href="#by-video">By Video</a>
+				</li>
+				<li>
+					<a href="#by-music">By Music</a>
+				</li>
+			</ul>
+			<div id="by-artists" class="tab">
+			
+				<div class="explore-posts">	
+				<?php $query = new WP_Query('category_name=song&tag=Artists'); ?>
+				<?php if ($query->have_posts()) :
+					$i=0; // counter
+					while ($query->have_posts()) : $query->the_post();
+						if($i%3==0) { ?>
+					<ul class="cycle notsyle">
+					<?php } ?>
+						<li class="post-type song">
+							<div class="post-thumb">
+								<img src="<?php $image_id = get_post_thumbnail_id(); $image_url = wp_get_attachment_image_src($image_id, true); echo $image_url[0]; ?>" alt="<?php the_title(); ?>">
+							</div>
+							<div class="excerpt-post">
+								<h2>
+									<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+								</h2>
+								<p><?php $excerpt = get_the_excerpt(); echo string_limit_words($excerpt,14); ?>...</p>
+								<span class="post-views"><?php if(function_exists('the_views')) { the_views(); } ?></span>
+							</div>
+						</li>
+					<?php $i++;
+					if($i%3==0) { ?>
 					</ul>
-					<div id="by-artists" class="tab">
-						<div class="explore-posts">	
-							
+					<?php } ?>
 
-<?php $query = new WP_Query('category_name=song&tag=Artists'); ?>
-<?php if ($query->have_posts()) :
-	$i=0; // counter
-	while ($query->have_posts()) : $query->the_post();
-		if($i%3==0) { ?>
-		<ul class="cycle notsyle">
-		<?php } ?>
-								<li class="post-type song">
-									<div class="post-thumb"><img src="<?php $image_id = get_post_thumbnail_id(); $image_url = wp_get_attachment_image_src($image_id, true); echo $image_url[0]; ?>" alt="<?php the_title(); ?>"></div>
-									<div class="excerpt-post">
-										<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-										<p><?php $excerpt = get_the_excerpt(); echo string_limit_words($excerpt,14); ?>...</p>
-										<span class="post-views"><?php if(function_exists('the_views')) { the_views(); } ?></span>
-									</div>
-								</li>
-		<?php $i++;
-		if($i%3==0) { ?>
-		</ul>
-		<?php } ?>
+				<?php endwhile; ?>
+					<?php
+					if($i%3!=0) { ?>
+					</ul>
+					<?php } ?>
 
-	<?php endwhile; ?>
-		<?php
-		if($i%3!=0) { ?>
-		</ul>
-		<?php } ?>
-
-<?php endif; 
-	wp_reset_query();
-?>
+					<?php endif; wp_reset_query(); ?>
 																	
-						</div>
-						<div class="prev-next">
-							<span class="prev"><a href="javascript:void(0)">Prev</a></span>
-							<span class="next"><a href="javascript:void(0)">Next</a></span>
-						</div>	
-					</div>
-					<div id="by-video" class="tab">
-
-						<div class="explore-posts">	
-							
-
-<?php $query = new WP_Query('category_name=song&tag=Video'); ?>
-<?php if ($query->have_posts()) :
-	$i=0; // counter
-	while ($query->have_posts()) : $query->the_post();
-		if($i%3==0) { ?>
-		<ul class="cycle notsyle">
-		<?php } ?>
-								<li class="post-type song">
-									<div class="post-thumb"><img src="<?php $image_id = get_post_thumbnail_id(); $image_url = wp_get_attachment_image_src($image_id, true); echo $image_url[0]; ?>" alt="<?php the_title(); ?>"></div>
-									<div class="excerpt-post">
-										<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-										<p><?php $excerpt = get_the_excerpt(); echo string_limit_words($excerpt,14); ?>...</p>
-										<span class="post-views"><?php the_views(); ?></span>
-									</div>
-								</li>
-		<?php $i++;
-		if($i%3==0) { ?>
-		</ul>
-		<?php } ?>
-
-	<?php endwhile; ?>
-		<?php
-		if($i%3!=0) { ?>
-		</ul>
-		<?php } ?>
-
-<?php endif; 
-	wp_reset_query();
-?>
-																	
-						</div>
-						<div class="prev-next">
-							<span class="prev"><a href="javascript:void(0)">Prev</a></span>
-							<span class="next"><a href="javascript:void(0)">Next</a></span>
-						</div>
-	
-					</div>
-					<div id="by-music" class="tab">
-
-						<div class="explore-posts">	
-							
-
-<?php $query = new WP_Query('category_name=song&tag=Music'); ?>
-<?php if ($query->have_posts()) :
-	$i=0; // counter
-	while ($query->have_posts()) : $query->the_post();
-		if($i%3==0) { ?>
-		<ul class="cycle notsyle">
-		<?php } ?>
-								<li class="post-type song">
-									<div class="post-thumb"><img src="<?php $image_id = get_post_thumbnail_id(); $image_url = wp_get_attachment_image_src($image_id, true); echo $image_url[0]; ?>" alt="<?php the_title(); ?>"></div>
-									<div class="excerpt-post">
-										<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-										<p><?php $excerpt = get_the_excerpt(); echo string_limit_words($excerpt,14); ?>...</p>
-										<span class="post-views"><?php the_views(); ?></span>
-									</div>
-								</li>
-		<?php $i++;
-		if($i%3==0) { ?>
-		</ul>
-		<?php } ?>
-
-	<?php endwhile; ?>
-		<?php
-		if($i%3!=0) { ?>
-		</ul>
-		<?php } ?>
-
-<?php endif; 
-	wp_reset_query();
-?>
-
-
-																	
-						</div>
-						<div class="prev-next">
-							<span class="prev"><a href="javascript:void(0)">Prev</a></span>
-							<span class="next"><a href="javascript:void(0)">Next</a></span>
-						</div>
-	
-					</div>
 				</div>
-			</div><!-- #explore -->
+				<div class="prev-next">
+					<span class="prev"><a href="javascript:void(0)">Prev</a></span>
+					<span class="next"><a href="javascript:void(0)">Next</a></span>
+				</div>	
+			</div>
+			
+			<div id="by-video" class="tab">
+
+				<div class="explore-posts">	
+							
+					<?php $query = new WP_Query('category_name=song&tag=Video'); ?>
+					<?php if ($query->have_posts()) :
+						$i=0; // counter
+						while ($query->have_posts()) : $query->the_post();
+							if($i%3==0) { ?>
+					<ul class="cycle notsyle">
+						<?php } ?>
+						<li class="post-type song">
+							<div class="post-thumb">
+								<img src="<?php $image_id = get_post_thumbnail_id(); $image_url = wp_get_attachment_image_src($image_id, true); echo $image_url[0]; ?>" alt="<?php the_title(); ?>">
+							</div>
+							<div class="excerpt-post">
+								<h2>
+									<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+								</h2>
+								<p><?php $excerpt = get_the_excerpt(); echo string_limit_words($excerpt,14); ?>...</p>
+								<span class="post-views"><?php the_views(); ?></span>
+							</div>
+						</li>
+					<?php $i++;
+					if($i%3==0) { ?>
+					</ul>
+					<?php } ?>
+
+				<?php endwhile; ?>
+					<?php
+					if($i%3!=0) { ?>
+					</ul>
+					<?php } ?>
+
+				<?php endif; wp_reset_query(); ?>
+																	
+				</div>
+				<div class="prev-next">
+					<span class="prev"><a href="javascript:void(0)">Prev</a></span>
+					<span class="next"><a href="javascript:void(0)">Next</a></span>
+				</div>
+			</div>
+			
+			<div id="by-music" class="tab">
+
+				<div class="explore-posts">	
+					<?php the_field('itunes'); ?>
+				</div>
+			</div>
+		</div>
+	</div><!-- #explore -->
 			
 			<div id="freshly-team" class="aside">
 				<div class="spacer"></div>
@@ -259,7 +230,7 @@ get_header(); ?>
 			</div>
 			
 			<div id="fresh-out" class="aside">
-				<h2 class="sec-title">Fresh out of oven</h2>
+				<h2 class="sec-title">Tasty Tidbits</h2>
 				<ul class="fresh-posts nostyle">
 					<?php
 					global $post;

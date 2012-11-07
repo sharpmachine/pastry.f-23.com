@@ -1,6 +1,6 @@
 <section id="sidebar">
 	<div id="fresh-out" class="sb">
-		<h2 class="sec-title">Fresh out of the oven</h2>
+		<h2 class="sec-title">Tasty Tidbits</h2>
 		<ul class="fresh-posts nostyle">
 			<?php
 			global $post;

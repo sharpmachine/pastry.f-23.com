@@ -24,12 +24,22 @@
          url('fonts/jennasue-webfont.svg#jenna_sueregular') format('svg');
     font-weight: normal;
     font-style: normal;
-
 }
+
+@arial: 'Arial', sans-serif;
+@arimo: 'Arimo', 'Arial', sans-serif;
+@oxygen:'Oxygen', 'Arial', sans-serif;
 
 * { margin: 0; padding: 0; outline: none;}
 html { height: 100%; overflow: auto;}
-body { width: 100%; background: url('bg.jpg') repeat-x top center fixed; font-family: 'Arial', sans-serif; color: #5a5a5a; font-size: 12px; }
+
+body { 
+	width: 100%; 
+	background: url('bg.jpg') repeat-x top center fixed; 
+	font-family: @oxygen; 
+	color: #5a5a5a; 
+	font-size: 14px; 
+}
 a { text-decoration: none; color: #e72798;}
 .clear { clear: both;}
 .spacer { clear: both; height: 48px;}
@@ -51,7 +61,7 @@ a img {
 textarea:focus, input:focus { outline: none !important;}
 section.block { clear: both; position: relative; display: inline-block; width: 100%; margin: 10px auto;}
 .sec-title { font-size: 22px; font-family: 'Century Gothic', sans-serif; color: #333333; padding-bottom: 20px;}
-section.top { margin-top: 80px;}
+section.top { margin-top: 80px; margin-bottom: 15px;}
 .main { width: 555px; float: left;}
 .aside { width: 360px; float: right;}
 nav ul { list-style: none;}
@@ -120,6 +130,16 @@ section#instagram-carousel .prev-next .next a { float: right; background-positio
 #freshly-team .tab { height: 495px; width: 355px;}
 #were-social .tab { height: 260px; }
 /**/
+.explore-posts {
+	iframe {
+		display: block;
+		margin: 70px auto 0 auto
+	}
+}
+
+#by-music{
+	background: url(assets/img/music-tab.png) center 10px;
+}
 #explore .prev-next { position: absolute; bottom: 25px; width: 490px; left: 30px;}
 #explore .prev-next a { display: block; width: 23px; height: 23px; background: url('assets/img/cyclerarrows.png') no-repeat; text-indent: -9999px;}
 #explore .prev-next .prev a { float: left; background-position: left;}
@@ -142,7 +162,7 @@ section#instagram-carousel .prev-next .next a { float: right; background-positio
 .fresh-posts .post-date { font-style: italic; font-size: 11px; }
 .fresh-posts .excerpt-post { width: 245px; float: right; border-bottom: 1px solid #d9d9d9; padding-bottom: 15px;}
 .fresh-posts li:last-child .excerpt-post { border-bottom: 0;}
-.fresh-posts .excerpt-post p { width: 200px; font-size: 13px; line-height: 18px;}
+.fresh-posts .excerpt-post p { width: 200px; font-size: 12px; line-height: 18px;}
 
 /* TABS */
 .aside .tab-menu li { width: 109px;}
@@ -404,7 +424,7 @@ footer #newsletter form { margin-top: 10px; }
 footer #newsletter input[type='text'] { width: 150px; border: 0; border-radius: 5px 0px 0px 5px; -moz-border-radius: 5px 0px 0px 5px; -webkit-border-radius: 5px 0px 0px 5px; padding: 8px; display: block; float: left;}
 footer #newsletter input[type='submit'] { padding: 8px; border: 0; color: #fff; background: #e62799; height: 30px; border-radius: 0 5px 5px 0; -moz-border-radius: 0 5px 5px 0; -webkit-border-radius: 0 5px 5px 0; display: inline-block; float: left; position: relative; cursor: pointer; width: 70px; font-weight: bold;}
 /**/
-footer #stay-connected { float: right; width: 281px; height: 115px;}
+footer #stay-connected { float: right; width: 285px; height: 115px;}
 footer #stay-connected a { margin-top: 10px; display: inline-block; width: 44px; height: 44px; text-indent: -9999px; background: url('assets/img/icons/socialspriteicons.png') no-repeat; line-height: 44px; opacity: 0.6;}
 footer #stay-connected a:hover { opacity: 1.0;}
 footer #stay-connected a.facebook { background-position: left; }
